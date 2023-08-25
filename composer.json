@@ -1,0 +1,21 @@
+{
+    "name": "nicolasblancom/magento2-module-livereloadscript",
+    "description": "The LiveReloadScript module adds the needed script to the head only in developer mode",
+    "require": {
+        "php": "^8",
+        "magento/framework": ">=103"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Nicolasblancom\\LiveReloadScript\\": ""
+        }
+    }
+}
