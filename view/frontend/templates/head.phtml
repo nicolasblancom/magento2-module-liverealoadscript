@@ -1,0 +1,7 @@
+<?php
+/** @var \Nicolasblancom\LiveReloadScript\Block\Head $block */
+?>
+
+<?php if ($block->isEnabled()): ?>
+    <script src="<?= $block->getScriptURL(); ?>" src_type="url"></script>
+<?php endif; ?>
