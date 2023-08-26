@@ -9,7 +9,7 @@ use Magento\Framework\View\Element\Template;
 
 class Head extends Template
 {
-    const LIVERELOAD_DEFAULT_SCRIPT_URL     = 'https://127.0.0.1:35729/livereload.js';
+    const LIVERELOAD_DEFAULT_SCRIPT_URL     = '/livereload.js?port=443';
     const LIVERELOAD_CONFIG_PATH_ENABLED    = 'dev/livereload/enable';
     const LIVERELOAD_CONFIG_PATH_SCRIPT_URL = 'dev/livereload/script_url';
 
