@@ -14,6 +14,10 @@ You can also configure url in module admin options.
 
 ## Installation
 
+```shell
+composer require nicolasblancom/magento2-module-livereloadscript
+```
+
 ## Why
 
 When using LiveReload, there are several ways of having it running. One of those ways is having a `<script>` tag in Magento head.
