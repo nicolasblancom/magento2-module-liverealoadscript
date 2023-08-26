@@ -6,17 +6,16 @@
 
 ## Table of contents
 
+- [Summary](#summary)
+- [Why](#why)
+- [Installation](#installation)
+- [Usage](#usage)
+
 ## Summary
 
 This module adds the `<script>` you need in the `<head>` of Magento only when developer mode is enabled.
 
 You can also configure url in module admin options.
-
-## Installation
-
-```shell
-composer require nicolasblancom/magento2-module-livereloadscript
-```
 
 ## Why
 
@@ -25,6 +24,12 @@ When using LiveReload, there are several ways of having it running. One of those
 But you have to add a new layout xml file that outputs this script. So... now you have this change pushed in your repo, and when you deploy to production it will also be there.
 
 This module aims to solve this problem by adding that script conditionally only when you are in developer mode. So when you push to production (and use production mode), it will not output the script tag.
+
+## Installation
+
+```shell
+composer require nicolasblancom/magento2-module-livereloadscript
+```
 
 ## Usage
 
@@ -66,3 +71,5 @@ You have two options, both at global level:
 
 - **Enabled:** "yes" by default. This option enables/disables script tag output in head. Even when enabled, if you are not running Magento in developer mode, it will not output anything. So you can be sure that in production mode it will not output anything related to LiveReload.
 - **Script URL:** "/livereload.js?port=443" by default. This is the default value if you use [docker-magento](https://github.com/markshust/docker-magento) by Mark Shust for your development environment. Otherwise you may need to change it to `http:yourdomain.test:35729/livereload.js`.
+
+![Demo config options](https://raw.githubusercontent.com/nicolasblancom/magento2-module-liverealoadscript/main/docs/demo-config-options.jpg)
