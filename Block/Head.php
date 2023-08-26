@@ -2,9 +2,9 @@
 
 namespace Nicolasblancom\LiveReloadScript\Block;
 
-// TODO load config interface and app state
+// TODO load config interface
 //use Magento\Framework\App\Config\ScopeConfigInterface;
-//use Magento\Framework\App\State;
+use Magento\Framework\App\State;
 use Magento\Framework\View\Element\Template;
 
 class Head extends Template
@@ -14,7 +14,8 @@ class Head extends Template
     const LIVERELOAD_CONFIG_PATH_SCRIPT_URL = 'dev/livereload/script_url';
 
     public function __construct(
-        Template\Context $context
+        Template\Context $context,
+        private State $state,
     ) {
         parent::__construct($context);
     }
@@ -27,7 +28,11 @@ class Head extends Template
     public function isEnabled(): bool
     {
         // TODO: get value config and fallback to defined constant
-        // TODO: condition if in developer mode
+
+        if ($this->state->getMode() !== State::MODE_DEVELOPER) {
+            return false;
+        }
+
         return true;
     }
 
