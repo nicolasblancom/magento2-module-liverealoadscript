@@ -25,6 +25,32 @@ But you have to add a new layout xml file that outputs this script. So... now yo
 
 This module aims to solve this problem by adding that script conditionally only when you are in developer mode. So when you push to production (and use production mode), it will not output the script tag.
 
+## Alternative
+
+If you do not want to install a module for this task, you take this alternative: use your ```env.php``` file. Just add this content:
+
+```php
+'system' => [
+    'default' => [
+        'design' => [
+            'head' => [
+                'includes' => '<script defer="true" src="/livereload.js?port=443"></script>'
+            ]
+        ]
+    ]
+]
+```
+
+1 - You should ensure there is no previous content in that option. Two ways of doing this:
+
+- In admin: Content > Design > Configuration, Other settings > HTML head > Scripts and Style Sheets.
+- From CLI: `bin/magento config:show design/head/includes` (if it fails, it seems like there is a small bug in some 2.4.x versions, so try `bin/magento config:show | grep "design/head/includes"`)
+
+2 - Just grab that content, and add it to the env.php with the content from above code snippet.
+
+3 - Import data from files (env.php and config.php) to Magento with `bin/magento app:config:import`
+4 - Clean cache to see changes with `bin/magento cache:clean`
+
 ## Installation
 
 ```shell
